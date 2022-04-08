@@ -40,7 +40,7 @@
     {
       "apiVersion": "2015-01-01",
       "type": "Microsoft.ApiManagement/service/products/apis",
-      "name": "[concat(parameters('apimServiceName'), '/CGI eRegistry/eaddressregistry-maintenance-v1')]",
+      "name": "[concat(parameters('apimServiceName'), '/CGI-eRegistry/eaddressregistry-maintenance-v1')]",
       "dependsOn": [
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'eaddressregistry-maintenance-v1')]"
       ]
