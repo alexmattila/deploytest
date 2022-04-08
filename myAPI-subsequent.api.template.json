@@ -11,8 +11,6 @@
       "type": "Microsoft.ApiManagement/service/apis",
       "name": "[concat(parameters('apimServiceName'), '/myAPI')]",
       "dependsOn": [],
-      "properties": {
-        },
         "displayName": "myAPI",
         "path": "myAPIPet",
         "protocols": [
