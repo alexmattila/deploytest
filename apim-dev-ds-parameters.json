@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "apimServiceName": {
-      "value": "apim-dev-ds"
+      "value": "test-apim-ccv"
     },
     "linkedTemplatesBaseUrl": {
       "value": "https://github.com/alexmattila/deploytest/blob/main"
