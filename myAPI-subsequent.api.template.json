@@ -12,13 +12,7 @@
       "name": "[concat(parameters('apimServiceName'), '/myAPI')]",
       "dependsOn": [],
       "properties": {
-        "authenticationSettings": {
-          "subscriptionKeyRequired": false
         },
-        "apiVersion": "v1",
-        "isCurrent": false,
-        "apiVersionDescription": "My first version",
-        "subscriptionRequired": false,
         "displayName": "myAPI",
         "path": "myAPIPet",
         "protocols": [
