@@ -1,10 +1,12 @@
 <policies>
     <inbound>
         <base />
+        <!--
         <set-query-parameter name="code" exists-action="skip">
             <value>{{fa-dev-ear-apikey}}</value>
         </set-query-parameter>
         <set-backend-service base-url="https://fa-dev-ear-api.azurewebsites.net/api/" />
+-->
     </inbound>
     <backend>
         <forward-request timeout="30" buffer-request-body="true" />
