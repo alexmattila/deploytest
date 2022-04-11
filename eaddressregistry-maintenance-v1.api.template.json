@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apimServiceName": {
+      "type": "string"
+    },
+    "linkedTemplatesBaseUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Base URL of the repository"
+      }
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "name": "[concat(parameters('apimServiceName'), '/eaddressregistry-maintenance-v1')]",
+      "dependsOn": [],
+      "properties": {
+        "description": "Search for one or more eAddresses.",
+        "isCurrent": false,
+        "subscriptionRequired": false,
+        "displayName": "CGI eAddressRegistry - Internal Maintenance",
+        "path": "eaddressregistry-maintenance",
+        "protocols": [
+          "https"
+        ],
+        "value": "https://raw.githubusercontent.com/alexmattila/deploytest/main/swagger-eaddressregistry-internal-maintenance.json",
+        "format": "swagger-link-json"
+      }
+    },
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis/policies",
+      "name": "[concat(parameters('apimServiceName'), '/eaddressregistry-maintenance-v1/policy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'eaddressregistry-maintenance-v1')]"
+      ],
+      "properties": {
+        "value": "https://raw.githubusercontent.com/alexmattila/deploytest/main/policy-eaddressregistry-internal-maintenance.xml",
+        "format": "rawxml-link"
+      }
+    },
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/products/apis",
+      "name": "[concat(parameters('apimServiceName'), '/cgi-eregistry/eaddressregistry-maintenance-v1')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'eaddressregistry-maintenance-v1')]"
+      ]
+    }
+  ]
+}
