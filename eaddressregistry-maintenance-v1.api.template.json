@@ -4,6 +4,12 @@
   "parameters": {
     "apimServiceName": {
       "type": "string"
+    },
+    "linkedTemplatesBaseUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Base URL of the repository"
+      }
     }
   },
   "resources": [
@@ -21,7 +27,7 @@
         "protocols": [
           "https"
         ],
-        "value": "https://github.com/alexmattila/deploytest/blob/main/swagger-eaddressregistry-internal-maintenance.json",
+        "value": "https://raw.githubusercontent.com/alexmattila/deploytest/main/swagger-eaddressregistry-internal-maintenance.json",
         "format": "swagger-link-json"
       }
     },
@@ -33,14 +39,14 @@
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'eaddressregistry-maintenance-v1')]"
       ],
       "properties": {
-        "value": "https://github.com/alexmattila/deploytest/blob/main/policy-eaddressregistry-internal-maintenance.xml",
+        "value": "https://raw.githubusercontent.com/alexmattila/deploytest/main/policy-eaddressregistry-internal-maintenance.xml",
         "format": "rawxml-link"
       }
     },
     {
       "apiVersion": "2021-08-01",
       "type": "Microsoft.ApiManagement/service/products/apis",
-      "name": "[concat(parameters('apimServiceName'), '/CGI-eRegistry/eaddressregistry-maintenance-v1')]",
+      "name": "[concat(parameters('apimServiceName'), '/cgi-eregistry/eaddressregistry-maintenance-v1')]",
       "dependsOn": [
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'eaddressregistry-maintenance-v1')]"
       ]
