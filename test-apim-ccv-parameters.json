@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apimServiceName": {
+      "value": "test-apim-ccv"
+    },
+    "linkedTemplatesBaseUrl": {
+      "value": "https://raw.githubusercontent.com/alexmattila/deploytest/main"
+    }
+  },
+  "resources": []
+}
