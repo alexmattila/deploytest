@@ -33,8 +33,8 @@
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'eaddressregistry-maintenance-v1')]"
       ],
       "properties": {
-        "value": "https://raw.githubusercontent.com/alexmattila/deploytest/main/policy-eaddressregistry-internal-maintenance.xml",
-        "format": "rawxml-link"
+        "policyContent": "https://raw.githubusercontent.com/alexmattila/deploytest/main/policy-eaddressregistry-internal-maintenance.xml",
+        "contentFormat": "rawxml-link"
       }
     }
   ]
