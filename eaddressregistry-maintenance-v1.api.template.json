@@ -36,14 +36,6 @@
         "value": "https://raw.githubusercontent.com/alexmattila/deploytest/main/policy-eaddressregistry-internal-maintenance.xml",
         "format": "rawxml-link"
       }
-    },
-    {
-      "apiVersion": "2018-01-01",
-      "type": "Microsoft.ApiManagement/service/products/apis",
-      "name": "[concat(parameters('apimServiceName'), '/cgi-eregistry/eaddressregistry-maintenance-v1')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'eaddressregistry-maintenance-v1')]"
-      ]
     }
   ]
 }
