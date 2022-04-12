@@ -10,7 +10,7 @@
     {
       "apiVersion": "2021-08-01",
       "type": "Microsoft.ApiManagement/service/apiVersionSets",
-      "name": "[concat(parameters('apimServiceName'), '/eaddressregistry-maintenance')]",
+      "name": "[concat(parameters('apimServiceName'), '/eaddressregistry-maintenance-v1')]",
       "dependsOn": [],
       "properties": {
         "displayName": "CGI eAddressRegistry - Internal Maintenance",
